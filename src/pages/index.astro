@@ -143,10 +143,16 @@ const stats = [
             <div class="staff-info">
               <div class="staff-role">Fondateur</div>
               <h3>Calvin Mouse</h3>
-              <p>Créateur et fondateur de Prime Roleplay. Passionné par le jeu de rôle de qualité depuis des années, Calvin a bâti ce serveur avec une vision claire : offrir l'expérience FiveM la plus immersive possible.</p>
-              <div class="staff-badge">
-                <svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
-                Propriétaire & Admin
+              <p>Créateur et fondateur de Prime Roleplay. Développeur très expérimenté depuis plusieurs années, Calvin a mis ses compétences techniques au service d'un projet ambitieux : offrir l'expérience FiveM la plus immersive possible, avec une infrastructure solide et des scripts optimisés conçus de A à Z.</p>
+              <div class="staff-badges">
+                <div class="staff-badge">
+                  <svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                  Propriétaire & Admin
+                </div>
+                <div class="staff-badge staff-badge-dev">
+                  <svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor"><path d="M8 3l-5 9 5 9M16 3l5 9-5 9M12 3v18"/></svg>
+                  Développeur expérimenté
+                </div>
               </div>
             </div>
           </div>
@@ -345,7 +351,9 @@ const stats = [
   .staff-role { font-size: 0.7rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.1em; color: var(--accent); margin-bottom: 0.3rem; }
   .staff-info h3 { font-size: 1.2rem; font-weight: 800; margin-bottom: 0.75rem; }
   .staff-info p { font-size: 0.875rem; color: var(--gray); line-height: 1.65; margin-bottom: 0.75rem; }
+  .staff-badges { display: flex; flex-wrap: wrap; gap: 0.5rem; }
   .staff-badge { display: inline-flex; align-items: center; gap: 0.35rem; background: rgba(220,38,38,0.08); border: 1px solid rgba(220,38,38,0.2); border-radius: 999px; padding: 0.25rem 0.7rem; font-size: 0.72rem; font-weight: 600; color: var(--accent); }
+  .staff-badge-dev { background: rgba(59,130,246,0.08); border-color: rgba(59,130,246,0.25); color: #60a5fa; }
   .staff-join {
     background: var(--bg-3); border: 1px dashed rgba(255,255,255,0.1); border-radius: 20px;
     padding: 2.5rem; display: flex; flex-direction: column; align-items: flex-start; justify-content: center;
