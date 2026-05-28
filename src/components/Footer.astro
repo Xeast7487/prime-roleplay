@@ -1,0 +1,61 @@
+---
+---
+<footer>
+  <div class="container">
+    <div class="footer-top">
+      <div class="footer-brand">
+        <a href="/" class="logo"><span class="lp">P</span>RIME <span class="lrp">RP</span></a>
+        <p>Serveur FiveM GTA V — Roleplay sérieux<br />Communauté active & passionnée</p>
+      </div>
+      <div class="footer-links">
+        <div class="col">
+          <h4>Navigation</h4>
+          <a href="#features">Fonctionnalités</a>
+          <a href="#join">Comment rejoindre</a>
+          <a href="#staff">Staff</a>
+          <a href="#community">Communauté</a>
+        </div>
+        <div class="col">
+          <h4>Serveur</h4>
+          <span class="ip">51.222.255.96:30122</span>
+          <a href="fivem://connect/51.222.255.96:30122" class="connect-btn">
+            <svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
+            Se connecter
+          </a>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; {new Date().getFullYear()} Prime Roleplay — Tous droits réservés</p>
+      <p>Fondé par Calvin Mouse</p>
+    </div>
+  </div>
+</footer>
+
+<style>
+  footer { background: var(--bg-2); border-top: 1px solid var(--border); padding: 4rem 2rem 2rem; }
+  .container { max-width: 1100px; margin: 0 auto; }
+  .footer-top { display: grid; grid-template-columns: 1fr 1fr; gap: 3rem; padding-bottom: 3rem; border-bottom: 1px solid var(--border); }
+  .logo { font-family: 'Rajdhani', sans-serif; font-size: 1.3rem; font-weight: 700; letter-spacing: 0.08em; display: inline-block; margin-bottom: 0.75rem; }
+  .lp, .lrp { color: var(--accent); }
+  .footer-brand p { font-size: 0.875rem; color: var(--gray); line-height: 1.6; }
+  .footer-links { display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; }
+  .col { display: flex; flex-direction: column; gap: 0.6rem; }
+  .col h4 { font-size: 0.7rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.1em; color: rgba(255,255,255,0.3); margin-bottom: 0.4rem; }
+  .col a { font-size: 0.875rem; color: var(--gray); transition: color 0.2s; }
+  .col a:hover { color: var(--white); }
+  .ip { font-family: monospace; font-size: 0.8rem; color: var(--gray); background: var(--bg-3); padding: 0.3rem 0.6rem; border-radius: 4px; width: fit-content; }
+  .connect-btn {
+    display: flex; align-items: center; gap: 0.4rem; width: fit-content;
+    background: var(--accent); color: #fff;
+    padding: 0.45rem 0.9rem; border-radius: 5px;
+    font-size: 0.8rem; font-weight: 700; transition: background 0.2s;
+  }
+  .connect-btn:hover { background: var(--accent-dark); }
+  .footer-bottom { display: flex; justify-content: space-between; align-items: center; padding-top: 1.5rem; }
+  .footer-bottom p { font-size: 0.8rem; color: rgba(255,255,255,0.25); }
+  @media (max-width: 768px) {
+    .footer-top { grid-template-columns: 1fr; gap: 2rem; }
+    .footer-bottom { flex-direction: column; gap: 0.5rem; text-align: center; }
+  }
+</style>

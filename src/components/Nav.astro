@@ -1,0 +1,87 @@
+---
+---
+<nav id="nav">
+  <a href="/" class="logo">
+    <span class="logo-p">P</span>RIME <span class="logo-rp">RP</span>
+  </a>
+  <div class="nav-links">
+    <a href="#features">Fonctionnalités</a>
+    <a href="#join">Rejoindre</a>
+    <a href="#staff">Staff</a>
+    <a href="#community">Communauté</a>
+  </div>
+  <a class="nav-cta" href="fivem://connect/51.222.255.96:30122">
+    <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
+    Jouer
+  </a>
+  <button class="burger" id="burger" aria-label="Menu">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
+<div class="mobile-menu" id="mobile-menu">
+  <a href="#features" class="mm-link">Fonctionnalités</a>
+  <a href="#join" class="mm-link">Rejoindre</a>
+  <a href="#staff" class="mm-link">Staff</a>
+  <a href="#community" class="mm-link">Communauté</a>
+  <a class="mm-cta" href="fivem://connect/51.222.255.96:30122">
+    <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
+    Jouer maintenant
+  </a>
+</div>
+
+<style>
+  #nav {
+    position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+    display: flex; align-items: center; gap: 2rem;
+    padding: 0 2rem; height: 68px;
+    background: rgba(13,13,15,0.85);
+    backdrop-filter: blur(14px);
+    border-bottom: 1px solid var(--border);
+    transition: background 0.3s;
+  }
+  .logo {
+    font-family: 'Rajdhani', sans-serif;
+    font-size: 1.4rem; font-weight: 700; letter-spacing: 0.08em;
+    color: var(--white); flex-shrink: 0;
+  }
+  .logo-p { color: var(--accent); }
+  .logo-rp { color: var(--accent); }
+  .nav-links { display: flex; gap: 1.75rem; margin-left: auto; }
+  .nav-links a { font-size: 0.875rem; font-weight: 500; color: var(--gray); transition: color 0.2s; letter-spacing: 0.02em; }
+  .nav-links a:hover { color: var(--white); }
+  .nav-cta {
+    display: flex; align-items: center; gap: 0.4rem;
+    background: var(--accent); color: #fff;
+    padding: 0.5rem 1.1rem; border-radius: 6px;
+    font-size: 0.85rem; font-weight: 700; letter-spacing: 0.04em;
+    transition: background 0.2s, transform 0.2s; flex-shrink: 0;
+  }
+  .nav-cta:hover { background: var(--accent-dark); transform: translateY(-1px); }
+  .burger { display: none; flex-direction: column; gap: 5px; background: none; border: none; cursor: pointer; padding: 4px; }
+  .burger span { display: block; width: 22px; height: 2px; background: var(--white); border-radius: 2px; transition: transform 0.3s, opacity 0.3s; }
+  .mobile-menu {
+    display: none; position: fixed; top: 68px; left: 0; right: 0; z-index: 99;
+    background: var(--bg-2); border-bottom: 1px solid var(--border);
+    flex-direction: column; padding: 1.5rem 2rem; gap: 1.25rem;
+  }
+  .mobile-menu.open { display: flex; }
+  .mm-link { font-size: 1rem; font-weight: 500; color: var(--gray); }
+  .mm-link:hover { color: var(--white); }
+  .mm-cta {
+    display: flex; align-items: center; gap: 0.5rem;
+    background: var(--accent); color: #fff;
+    padding: 0.75rem 1.25rem; border-radius: 6px;
+    font-size: 0.9rem; font-weight: 700; width: fit-content; margin-top: 0.5rem;
+  }
+  @media (max-width: 768px) {
+    .nav-links, .nav-cta { display: none; }
+    .burger { display: flex; margin-left: auto; }
+  }
+</style>
+
+<script>
+  const burger = document.getElementById('burger');
+  const menu = document.getElementById('mobile-menu');
+  burger?.addEventListener('click', () => menu?.classList.toggle('open'));
+  menu?.querySelectorAll('.mm-link').forEach(l => l.addEventListener('click', () => menu.classList.remove('open')));
+</script>
