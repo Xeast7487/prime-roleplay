@@ -1,5 +1,19 @@
 ---
 ---
+<div id="announce-banner">
+  <div class="announce-inner">
+    <span class="announce-pulse"></span>
+    <span class="announce-text">
+      <strong>OUVERTURE PROCHAINEMENT</strong>
+      <span class="announce-sep">—</span>
+      Prime Roleplay ouvre très bientôt ses portes. Rejoins le Discord pour ne rien manquer&nbsp;!
+    </span>
+    <a class="announce-cta" href="https://discord.gg/primeroleplay" target="_blank" rel="noopener">
+      Discord →
+    </a>
+  </div>
+</div>
+
 <header id="site-header">
   <div class="nav-inner">
     <a href="/" class="logo">
@@ -38,9 +52,109 @@
 </div>
 
 <style>
-  #site-header {
+  /* ── ANNOUNCE BANNER ───────────────── */
+  #announce-banner {
     position: fixed;
     top: 0; left: 0; right: 0;
+    z-index: 101;
+    height: 44px;
+    background: linear-gradient(90deg, #1a0f00 0%, #0d0d18 40%, #1a0f00 100%);
+    border-bottom: 1px solid rgba(245, 158, 11, 0.35);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+  }
+
+  #announce-banner::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(90deg, transparent 0%, rgba(245,158,11,0.06) 50%, transparent 100%);
+    animation: banner-shimmer 3s ease-in-out infinite;
+    pointer-events: none;
+  }
+
+  @keyframes banner-shimmer {
+    0%, 100% { opacity: 0; }
+    50% { opacity: 1; }
+  }
+
+  .announce-inner {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    padding: 0 1.5rem;
+    position: relative;
+    z-index: 1;
+  }
+
+  .announce-pulse {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: var(--accent);
+    flex-shrink: 0;
+    box-shadow: 0 0 0 0 rgba(245, 158, 11, 0.6);
+    animation: pulse-banner 1.8s ease-in-out infinite;
+  }
+
+  @keyframes pulse-banner {
+    0%, 100% { box-shadow: 0 0 0 0 rgba(245, 158, 11, 0.6); }
+    50% { box-shadow: 0 0 0 7px rgba(245, 158, 11, 0); }
+  }
+
+  .announce-text {
+    font-size: 0.78rem;
+    font-weight: 500;
+    color: rgba(244, 243, 238, 0.82);
+    letter-spacing: 0.02em;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  .announce-text strong {
+    font-weight: 800;
+    color: var(--accent);
+    letter-spacing: 0.1em;
+    font-size: 0.72rem;
+    text-transform: uppercase;
+  }
+
+  .announce-sep {
+    opacity: 0.35;
+    margin: 0 0.1rem;
+  }
+
+  .announce-cta {
+    flex-shrink: 0;
+    font-size: 0.7rem;
+    font-weight: 800;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--accent);
+    background: rgba(245, 158, 11, 0.1);
+    border: 1px solid rgba(245, 158, 11, 0.3);
+    border-radius: 4px;
+    padding: 0.22rem 0.7rem;
+    transition: background 0.2s, border-color 0.2s;
+    white-space: nowrap;
+  }
+  .announce-cta:hover {
+    background: rgba(245, 158, 11, 0.2);
+    border-color: var(--accent);
+  }
+
+  @media (max-width: 600px) {
+    .announce-sep, .announce-text > :not(strong) { display: none; }
+    .announce-text strong { font-size: 0.7rem; }
+  }
+
+  /* ── NAV ───────────────────────────── */
+  #site-header {
+    position: fixed;
+    top: 44px; left: 0; right: 0;
     z-index: 100;
     background: rgba(8, 8, 15, 0.88);
     backdrop-filter: blur(16px);
